@@ -15,6 +15,11 @@ public class NotificationController : MonoBehaviour
 
 	void Update()
 	{
+		if(Input.GetKeyUp(KeyCode.I))
+		{
+			view.ToggleQuestScreen();
+		}
+
 		if(view.WindowState && Input.GetKeyUp(KeyCode.Space))
 		{
 			view.DisableNotificationPanel();
@@ -28,6 +33,13 @@ public class NotificationController : MonoBehaviour
 			activeQuest[i] = true;
 			view.QuestDetails = "The Emission Level in " + model.GetRoomName(i) + " is getting High: " + model.GetEmission(i);
 			view.EnableNotificationPanel();
+			view.UpdateButton(i);
 		}
+	}
+
+	public void UpdateQuestInfo(int index)
+	{
+		view.QuestDetails = "The Emission Level in " + model.GetRoomName(index) + " is getting High: " + model.GetEmission(index);
+		view.EnableNotificationPanel();
 	}
 }

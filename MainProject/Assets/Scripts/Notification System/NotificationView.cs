@@ -6,9 +6,11 @@ public class NotificationView : MonoBehaviour
 {
 
 	[SerializeField]CanvasGroup notificationPanel;
+	[SerializeField]GameObject questPanel;
 	[SerializeField]Text questDetails;
 	[SerializeField]Button[] questInfo;
 	bool enabledWindow;
+	NotificationController ctrl;
 
 	#region Unity 
 	// Use this for initialization
@@ -16,6 +18,7 @@ public class NotificationView : MonoBehaviour
 	
 		enabledWindow = false;
 		notificationPanel.alpha = 0;
+		ctrl = GetComponent<NotificationController>();
 	}
 	#endregion
 
@@ -23,6 +26,7 @@ public class NotificationView : MonoBehaviour
 	public void ViewQuestInfo(int i )
 	{
 		//questInfo[i]
+		ctrl.UpdateQuestInfo(i);
 	}
 
 	public void EnableNotificationPanel()
@@ -50,6 +54,17 @@ public class NotificationView : MonoBehaviour
 		}
 
 		yield return null;
+	}
+
+	public void UpdateButton(int i)
+	{
+		questInfo[i].GetComponentInChildren<Text>().text = "Quest #" + i;
+		questInfo[i].gameObject.SetActive(true);
+	}
+
+	public void ToggleQuestScreen()
+	{
+		questPanel.SetActive(!questPanel.activeSelf);
 	}
 	#endregion
 
