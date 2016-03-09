@@ -91,14 +91,12 @@ public class EnergyUsingObject : SimObject {
 	public float ReceiveEnergy() {
 
 		float amountToReturn = 0;
-		
-		//get how much energy to add based on average per sec.
-		float energyToAdd = powerSupply.getAvgUsePerSec() * Time.deltaTime * scale.getTimeScale();
-		
+
 		if (powerSupply.getIsEnergySupplied()) { //hub supplying energy.
-			
+			//get how much energy to add based on average per sec.
+			float energyToAdd = powerSupply.getAvgUsePerSec() * Time.deltaTime * scale.getTimeScale();
+
 			if (powerSupply.getIsOn()) { //if on.
-				
 				
 				powerSupply.addTotalUse(energyToAdd);
 				amountToReturn = energyToAdd;
@@ -117,9 +115,7 @@ public class EnergyUsingObject : SimObject {
 			}
 			
 		}
-
 		return amountToReturn;
-
 	}
 
 

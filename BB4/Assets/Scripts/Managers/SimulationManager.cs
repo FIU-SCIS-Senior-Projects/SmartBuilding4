@@ -9,15 +9,43 @@ public class SimulationManager {
 	//the private instance.
 	private static SimulationManager sm;
 
+
+	//important string constants.
+	public static string SceneSimulation = "Main";
+	public static string SceneMainMenu = "MainMenu";
+	public static string SceneEndStats = "EndStats";
+
+
+
 	//important objects in any scene.
-	public HUDController hud;
-	public TimeTrackerController timeTracker;
-	public TimeScaleController timeScale;
+	HUDController hud;
+	public HUDController Hud {
+		set; get;
+	}
+
+	TimeTrackerController timeTracker;
+	public TimeTrackerController TimeTracker {
+		set {
+			timeTracker = value;
+			timeTracker.setSimulationStartTime(startTimeOfDay);
+		}
+		get { return timeTracker; }
+	}
+
+	TimeScaleController timeScale;
+	public TimeScaleController TimeScale {
+		get { return timeScale; }
+		set {
+			timeScale = value;
+			timeScale.setSpecificTimeScale(startingTimeScale);
+		}
+	}
 
 
 	//simulation starting settings.
-	public string startTimeOfDay;
-	public int startRunTimeInsSeconds;
+	public string startTimeOfDay = "08:00:00 AM";      //what time of day it will be at the beggining of the simulation.
+	public int startRunTimeInsSeconds = 86400;         //how long the simulation should run. default 1 day.
+	static float startingTimeScale = 600;              //the starting time scale.
 
 
 	//important info gathered during simulation.

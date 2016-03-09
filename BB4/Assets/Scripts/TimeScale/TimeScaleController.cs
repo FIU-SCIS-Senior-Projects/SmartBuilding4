@@ -35,12 +35,12 @@ public class TimeScaleController : MonoBehaviour {
 
 	void Awake() {
 		sm = SimulationManager.sharedSimManager;
-		sm.timeScale = this;
+		sm.TimeScale = this;
 	}
 
 	// Use this for initialization
 	void Start () {
-		timeScale = new TimeScale();
+		//timeScale = new TimeScale();
 	}
 
 

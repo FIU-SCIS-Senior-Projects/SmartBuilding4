@@ -53,8 +53,10 @@ public class MainMenuController : MonoBehaviour {
 		SimulationManager.sharedSimManager.startRunTimeInsSeconds = modal.RunTime;
 
 		//begin the new scene.
-		Debug.Log("Starting time of day is " + timeofday);
-		Debug.Log("Run time in seconds is " + modal.RunTime);
+		//Debug.Log("Starting time of day is " + timeofday);
+		//Debug.Log("Run time in seconds is " + modal.RunTime);
+
+		Application.LoadLevel(SimulationManager.SceneSimulation);
 
 	}
 

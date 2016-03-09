@@ -16,7 +16,7 @@ public class HUDController : MonoBehaviour {
 
 	void Awake() {
 		sm = SimulationManager.sharedSimManager;
-		sm.hud = this;
+		sm.Hud = this;
 
 		hud = GetComponent<HUD>();
 		hudView = GetComponent<HUDView>();
@@ -34,10 +34,10 @@ public class HUDController : MonoBehaviour {
 	}
 
 	void OnEnable() {
-		time = GameObject.Find("TimeTracker+Scale").GetComponent<TimeTrackerController>();
+		time = GameObject.FindObjectOfType<TimeTrackerController>();
 		time.onOneSecondPassed += onOneSecPassed;
 
-		scale = GameObject.Find("TimeTracker+Scale").GetComponent<TimeScaleController>();
+		scale = GameObject.FindObjectOfType<TimeScaleController>();
 	}
 
 	void OnDisable() {

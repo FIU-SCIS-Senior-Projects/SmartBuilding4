@@ -44,16 +44,16 @@ public class TimeTrackerController : MonoBehaviour {
 
 	void Awake() {
 		sm = SimulationManager.sharedSimManager;
-		sm.timeTracker = this;
+		sm.TimeTracker = this;
 
 
-		sm.getSimulationRunTime();
+		//sm.getSimulationRunTime();
 	}
 
 
 	// Use this for initialization
 	void Start () {
-		timeTracker = new TimeTracker();
+		//timeTracker = new TimeTracker();
 
 		//onOneSecondPassed += oneSecondPassed;
 	}
@@ -301,6 +301,7 @@ public class TimeTrackerController : MonoBehaviour {
 
 		//set new.
 		timeTracker.setSimStartTime(totalSecs);
+		Debug.Log(timeTracker.getSimStartTime());
 
 	}
 
@@ -362,6 +363,25 @@ public class TimeTrackerController : MonoBehaviour {
 		return s;
 
 	}
+
+
+
+
+
+	/// For the day night cycle.
+	/// 
+	public int getTimeOfDayInSeconds() {
+
+		//get the number of days in seconds.
+		int secondsInADay = 86400;
+		int totalTime = timeTracker.getSimTimeInSeconds() + timeTracker.getSimStartTime();
+
+		int secondsInCurrentDay = totalTime % secondsInADay;
+
+
+		return secondsInCurrentDay;
+	}
+
 
 
 

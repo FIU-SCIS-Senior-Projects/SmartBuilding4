@@ -66,14 +66,25 @@ public class DayNightController : MonoBehaviour {
 		i = ((dayAtmosphereThickness - nightAtmosphereThickness) * dot) + nightAtmosphereThickness;
 		skyMat.SetFloat ("_AtmosphereThickness", i);
 
-		if (dot > 0) 
-			transform.Rotate (dayRotateSpeed * Time.deltaTime * skySpeed);
-		else
-			transform.Rotate (nightRotateSpeed * Time.deltaTime * skySpeed);
-
-		if (Input.GetKeyDown (KeyCode.Q)) skySpeed *= 0.5f;
-		if (Input.GetKeyDown (KeyCode.E)) skySpeed *= 2f;
 
 
+
+		//JUSTIN's CHANGES...
+
+
+		//if (dot > 0) 
+		//	transform.Rotate (dayRotateSpeed * Time.deltaTime * skySpeed);
+		//else
+		//	transform.Rotate (nightRotateSpeed * Time.deltaTime * skySpeed);
+
+		//if (Input.GetKeyDown (KeyCode.Q)) skySpeed *= 0.5f;
+		//if (Input.GetKeyDown (KeyCode.E)) skySpeed *= 2f;
+
+
+		int timeOfDayInSeconds = SimulationManager.sharedSimManager.TimeTracker.getTimeOfDayInSeconds();
+		float midnight = 270f; //90 is directly above. 270 directly below.
+		float angle = timeOfDayInSeconds * 360f / 86400f; //cross multiply divide. 360 degrees in circle, 86400 seconds in a day.
+		angle += midnight;     // add the degrees so that 0 seconds is 270 degrees.
+		transform.localRotation = Quaternion.Euler(angle, 0,0);
 	}
 }
