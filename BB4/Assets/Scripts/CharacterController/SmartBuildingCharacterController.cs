@@ -11,7 +11,7 @@ public class SmartBuildingCharacterController : MonoBehaviour
 	[SerializeField]float maxVelocityChange = 10.0f;
 	[SerializeField]bool canJump = false;
 	[SerializeField]float jumpHeight = 2.0f;
-	bool grounded = false; 
+	bool grounded = true; 
 	Rigidbody rigidBody; 
 
 	void Awake()
@@ -54,7 +54,7 @@ public class SmartBuildingCharacterController : MonoBehaviour
 		
 		rigidBody.AddForce (new Vector3 (0, -gravity * rigidBody.mass, 0));
 		
-		grounded = false; 
+		//grounded = false; 
 	}
 	float CalculateJumpVerticalSpeed()
 	{

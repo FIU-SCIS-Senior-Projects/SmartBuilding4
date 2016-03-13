@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class EmissionTracker : MonoBehaviour 
+public class EmissionTracker : SimObject 
 {
 	[SerializeField]float bogusValue; 	//temporary value to test emission
 	bool _emitting = true;

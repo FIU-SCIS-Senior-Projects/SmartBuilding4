@@ -382,7 +382,4 @@ public class TimeTrackerController : MonoBehaviour {
 		return secondsInCurrentDay;
 	}
 
-
-
-
 }

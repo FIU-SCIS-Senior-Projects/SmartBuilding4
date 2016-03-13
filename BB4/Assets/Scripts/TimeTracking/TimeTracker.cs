@@ -11,7 +11,7 @@ using System.Collections;
 [System.Serializable]
 public class TimeTracker {
 
-	#region
+	#region Variables
 
 	[Header("SIM TIMER")]
 

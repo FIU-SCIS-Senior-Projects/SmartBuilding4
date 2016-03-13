@@ -38,7 +38,9 @@ public class DayNightController : MonoBehaviour {
 
 		mainLight = GetComponent<Light>();	
 		skyMat = RenderSettings.skybox;
-
+		Debug.LogWarning(360*(SimulationManager.sharedSimManager.TimeTracker.getTimeOfDayInSeconds()/ 86400f));
+		transform.eulerAngles = new Vector3((360*(SimulationManager.sharedSimManager.TimeTracker.getTimeOfDayInSeconds()/ 86400f)),0,0);
+			
 	}
 
 	void Update () 
@@ -82,9 +84,10 @@ public class DayNightController : MonoBehaviour {
 
 
 		int timeOfDayInSeconds = SimulationManager.sharedSimManager.TimeTracker.getTimeOfDayInSeconds();
-		float midnight = 270f; //90 is directly above. 270 directly below.
-		float angle = timeOfDayInSeconds * 360f / 86400f; //cross multiply divide. 360 degrees in circle, 86400 seconds in a day.
-		angle += midnight;     // add the degrees so that 0 seconds is 270 degrees.
-		transform.localRotation = Quaternion.Euler(angle, 0,0);
+		Debug.Log(timeOfDayInSeconds);
+//		float midnight = 270f; //90 is directly above. 270 directly below.
+//		float angle = timeOfDayInSeconds * 360f / 86400f; //cross multiply divide. 360 degrees in circle, 86400 seconds in a day.
+//		angle += midnight;     // add the degrees so that 0 seconds is 270 degrees.
+		transform.eulerAngles = Vector3.Lerp(new Vector3(270,0,0), new Vector3(630,0,0), (float)(timeOfDayInSeconds/ 86400f));
 	}
 }
