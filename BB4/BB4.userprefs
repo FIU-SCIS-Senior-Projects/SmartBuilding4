@@ -1,11 +1,10 @@
 ﻿<Properties StartupItem="Assembly-CSharp.csproj">
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/EndStats/EndStatsController.cs">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Room\RoomManager.cs">
     <Files>
-      <File FileName="Assets/Scripts/Managers/SimulationManager.cs" Line="150" Column="5" />
-      <File FileName="Assets/Scripts/Tasks/Task.cs" Line="41" Column="3" />
-      <File FileName="Assets/Scripts/EndStats/EndStatsView.cs" Line="44" Column="40" />
-      <File FileName="Assets/Scripts/EndStats/EndStatsController.cs" Line="35" Column="76" />
+      <File FileName="Assets\Scripts\Room\RoomManager.cs" Line="13" Column="35" />
+      <File FileName="Assets\Scripts\Room\RoomView.cs" Line="33" Column="52" />
+      <File FileName="Assets\Scripts\Room\RoomModal.cs" Line="7" Column="37" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
