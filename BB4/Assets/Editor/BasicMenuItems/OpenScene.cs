@@ -14,4 +14,10 @@ public class OpenScene : Editor {
 	public static void OpenSimulatin() {
 		MyEditor.OpenScene(SimulationManager.SceneSimulation);
 	}
+
+	[MenuItem("Open Scene/End Stats")]
+	public static void OpenEndStats() {
+		MyEditor.OpenScene(SimulationManager.SceneEndStats);
+	}
+	                                
 }

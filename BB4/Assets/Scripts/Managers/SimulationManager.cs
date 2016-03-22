@@ -141,4 +141,17 @@ public class SimulationManager {
 
 
 
+	public int getTotalPoints() {
+
+		int total = 0;
+
+		foreach(Task t in taskList) {
+			if (t.State == Task.CompleteState.completed)
+				total+= t.PointValue;
+		}
+
+		return total;
+	}
+
+
 }

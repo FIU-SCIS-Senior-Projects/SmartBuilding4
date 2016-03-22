@@ -3,6 +3,18 @@ using System.Collections;
 
 public class Task : MonoBehaviour {
 
+
+	public enum TaskType {
+		TurnOn,
+		TurnOff,
+		MoveObject,
+		GoTo,
+		TalkTo,
+	}
+
+	public TaskType type;
+
+
 	public enum CompleteState {
 		inProgress,
 		completed,
@@ -23,6 +35,11 @@ public class Task : MonoBehaviour {
 	string taskName;
 	int secondsToCompleteTask;
 	int pointValue;
+	public int PointValue { 
+		get { 
+			return pointValue; 
+		} 
+	}
 
 
 	void Awake() {
