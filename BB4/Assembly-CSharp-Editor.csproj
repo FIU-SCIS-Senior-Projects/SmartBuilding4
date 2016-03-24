@@ -50,6 +50,8 @@
      <Compile Include="Assets\Editor\EnergyUsage\EnergyUsingObjectEditor.cs" />
      <Compile Include="Assets\Editor\MyEditor.cs" />
      <Compile Include="Assets\Editor\PlugLoad\PlugLoadEditor.cs" />
+     <Compile Include="Assets\Editor\SimulationMaker\SimulationTaskDatabase.cs" />
+     <Compile Include="Assets\Editor\SimulationMaker\TaskTimelineWindow.cs" />
      <None Include="Assets\Standard Assets\Printer\readme.txt" />
      <None Include="Assets\Standard Assets\Prototyping\Shaders\WorldCoordDiffuse.shader" />
      <None Include="Assets\Imports\RetroLamps\Shaders\Lamps_rimShader_dust.shader" />
