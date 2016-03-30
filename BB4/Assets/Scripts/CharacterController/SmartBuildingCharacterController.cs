@@ -13,12 +13,14 @@ public class SmartBuildingCharacterController : MonoBehaviour
 	[SerializeField]float jumpHeight = 2.0f;
 	bool grounded = true; 
 	Rigidbody rigidBody; 
+	Transform fPCam;
 
 	void Awake()
 	{
 		rigidBody = GetComponent<Rigidbody> ();
 		rigidBody.freezeRotation = true; 
 		rigidBody.useGravity = false; 
+		fPCam = GetComponentInChildren<Camera> ().transform;
 	}
 
 	void FixedUpdate()
@@ -35,7 +37,7 @@ public class SmartBuildingCharacterController : MonoBehaviour
 	{
 		if (grounded) {
 			Vector3 targetVelocity = new Vector3(Input.GetAxis("Strife"), 0, Input.GetAxis("Vertical"));
-			transform.eulerAngles += new Vector3(0, Input.GetAxis("Horizontal") * rotateSpeed, 0);
+			fPCam.eulerAngles += new Vector3(0, Input.GetAxis("Horizontal") * rotateSpeed, 0);
 			targetVelocity = transform.TransformDirection(targetVelocity);
 			targetVelocity *= _moveSpeed;
 			
