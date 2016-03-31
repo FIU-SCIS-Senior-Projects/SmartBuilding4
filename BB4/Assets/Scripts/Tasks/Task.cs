@@ -58,11 +58,16 @@ public class Task : MonoBehaviour {
 		get { return startTime; }
 	}
 
-	int secondsToCompleteTask;
-	public int SecondsToCompleteTask {
+	int timeLimit;
+	public int TimeLimit {
 		get {
-			return secondsToCompleteTask;
+			return timeLimit;
 		}
+	}
+
+	int timeLength;
+	public int TimeLength {
+		get { return timeLength; }
 	}
 
 	int pointValue;
