@@ -76,7 +76,9 @@
      <Compile Include="Assets\Scripts\Room\RoomManager.cs" />
      <Compile Include="Assets\Scripts\Room\RoomModal.cs" />
      <Compile Include="Assets\Scripts\Room\RoomView.cs" />
+     <Compile Include="Assets\Scripts\SimulationMaker\SimulationTaskDatabase.cs" />
      <Compile Include="Assets\Scripts\Tasks\Task.cs" />
+     <Compile Include="Assets\Scripts\Tasks\TaskStart.cs" />
      <Compile Include="Assets\Scripts\TimeScale\TimeScale.cs" />
      <Compile Include="Assets\Scripts\TimeScale\TimeScaleController.cs" />
      <Compile Include="Assets\Scripts\TimeTracking\TimeTracker.cs" />

@@ -1,12 +1,19 @@
 ﻿using UnityEngine;
 using System.Collections;
 
+using System.Collections.Generic;
+using System.Linq;
+
+using UnityEditor;
+
 [RequireComponent(typeof(MainMenu))]
 [RequireComponent(typeof(MainMenuView))]
 public class MainMenuController : MonoBehaviour {
 
 	MainMenu modal;
 	MainMenuView view;
+
+	SimulationTaskDatabase db;
 
 	void Awake() {
 		modal = GetComponent<MainMenu>();
@@ -15,13 +22,16 @@ public class MainMenuController : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-	
+		//get the filename.
+		string dbFilePath = "Assets/Editor/SimulationMaker/SimulationDatabase.asset";
+		db = AssetDatabase.LoadAssetAtPath<SimulationTaskDatabase>(dbFilePath);
 
+		view.initializeDbSimList(db.simulations);
 	}
 	
 	// Update is called once per frame
 	void Update () {
-	
+
 	}
 
 	public void beginSimulation() {
@@ -55,6 +65,42 @@ public class MainMenuController : MonoBehaviour {
 		//begin the new scene.
 		//Debug.Log("Starting time of day is " + timeofday);
 		//Debug.Log("Run time in seconds is " + modal.RunTime);
+
+
+
+
+		//create real tasks from database tasks.
+		List<Task> tasks = new List<Task>();
+
+		int selected = view.getSelectedSimulation();
+
+		DatabaseSimulation sim = db.simulations[selected];
+
+		for (int i=0; i<sim.tasks.Count; i++) {
+
+			DatabaseTask t = sim.tasks[i];
+			Debug.Log(t);
+
+			Task task = new Task();
+
+			task.TaskName = t.name;
+			task.Description = t.description;
+			task.StartTime = t.startTime;
+			task.TimeLimit = t.timeLimit;
+			task.TimeLength = t.length;
+
+			task.PointValue = t.pointValue;
+
+			task.State = Task.CompleteState.neverStarted;
+
+			SimulationManager.sharedSimManager.getListOfTasks().Add(task);
+
+
+		}
+
+		foreach(Task t in SimulationManager.sharedSimManager.getListOfTasks()) {
+			Debug.Log(t);
+		}
 
 		Application.LoadLevel(SimulationManager.SceneSimulation);
 

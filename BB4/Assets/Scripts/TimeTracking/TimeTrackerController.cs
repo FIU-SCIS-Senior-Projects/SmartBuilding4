@@ -133,6 +133,15 @@ public class TimeTrackerController : MonoBehaviour {
 
 
 
+	public int getSimStartTime() {
+		return timeTracker.getSimStartTime();
+	}
+
+
+
+
+
+
 	/// <summary>
 	/// Gets the sim time.
 	/// </summary>

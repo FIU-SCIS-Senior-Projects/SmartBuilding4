@@ -16,7 +16,7 @@ public class EmissionTracker : SimObject
 		bogusValue = Random.Range(0.001f,1f);
 		if (timer >= 1 && _emitting) {
 			_totalEmission += bogusValue;
-			Debug.Log(bogusValue); 
+			//Debug.Log(bogusValue); 
 			timer = 0;
 		}
 

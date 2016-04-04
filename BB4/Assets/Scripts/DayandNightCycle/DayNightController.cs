@@ -84,7 +84,7 @@ public class DayNightController : MonoBehaviour {
 
 
 		int timeOfDayInSeconds = SimulationManager.sharedSimManager.TimeTracker.getTimeOfDayInSeconds();
-		Debug.Log(timeOfDayInSeconds);
+		//Debug.Log(timeOfDayInSeconds);
 //		float midnight = 270f; //90 is directly above. 270 directly below.
 //		float angle = timeOfDayInSeconds * 360f / 86400f; //cross multiply divide. 360 degrees in circle, 86400 seconds in a day.
 //		angle += midnight;     // add the degrees so that 0 seconds is 270 degrees.

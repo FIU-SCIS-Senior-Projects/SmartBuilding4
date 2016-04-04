@@ -11,6 +11,7 @@ public class TaskTimelineWindow : EditorWindow {
 	[MenuItem("Simulation Maker/Simulation Task Timeline")]
 	public static void OpenWindow() {
 		EditorWindow.GetWindow(typeof(TaskTimelineWindow), false, "Task TimeLine");
+
 	}
 
 	public static string dbFilePath = "Assets/Editor/SimulationMaker/SimulationDatabase.asset";
