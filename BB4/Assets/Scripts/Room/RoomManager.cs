@@ -6,7 +6,8 @@ public class RoomManager : MonoBehaviour
 
 	RoomModal modal;
 	RoomView view;
-	
+
+	[Range(100,5000)][SerializeField]float threshHold;
 	// Use this for initialization
 	void Start () 
 	{
@@ -18,6 +19,12 @@ public class RoomManager : MonoBehaviour
 	void Update ()
 	{
 		//notification system update.
+		if(modal.TotalEnergyUsuage > threshHold)
+		{
+			Task t = new Task();
+			t.type = Task.TaskType.TurnOff;
+			NotificationController.reference.SetActiveQuest(modal.ID, t);
+		}
 	}
 
 	void OnTriggerEnter(Collider player)
@@ -25,7 +32,7 @@ public class RoomManager : MonoBehaviour
 		if(player.tag == "Player")
 		{
 			view.EnterRoom();
-			view.ChangeText(modal.rmName);
+			view.ChangeText(modal.RoomName);
 		}
 	}
 }
