@@ -72,6 +72,7 @@
      <Compile Include="Assets\OVR\Scripts\Util\OVRTrackerBounds.cs" />
      <Compile Include="Assets\Scripts\ALWAYS_EXPORT\Tester.cs" />
      <Compile Include="Assets\Scripts\CharacterController\SmartBuildingCharacterController.cs" />
+     <Compile Include="Assets\Scripts\CharacterController\SmartBuildingHeadBob.cs" />
      <Compile Include="Assets\Scripts\DayandNightCycle\DayNightController.cs" />
      <Compile Include="Assets\Scripts\DayandNightCycle\SetStars.cs" />
      <Compile Include="Assets\Scripts\EndStats\EndStatsController.cs" />
