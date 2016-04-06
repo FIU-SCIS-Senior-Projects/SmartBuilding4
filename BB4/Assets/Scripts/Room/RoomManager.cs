@@ -22,7 +22,8 @@ public class RoomManager : MonoBehaviour
 		if(modal.TotalEnergyUsuage > threshHold)
 		{
 			Task t = new Task();
-			t.type = Task.TaskType.TurnOff;
+			t.Type = Task.TaskType.TurnOff;
+			t.State = Task.CompleteState.inProgress;
 			NotificationController.reference.SetActiveQuest(modal.ID, t);
 		}
 	}

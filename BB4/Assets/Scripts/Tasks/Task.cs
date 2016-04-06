@@ -16,6 +16,10 @@ public class Task : MonoBehaviour {
 		get {
 			return type;
 		}
+
+		set	{
+			type = value;
+		}
 	}
 
 	public enum CompleteState {
