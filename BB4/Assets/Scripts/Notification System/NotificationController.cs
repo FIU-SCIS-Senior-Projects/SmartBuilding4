@@ -20,14 +20,14 @@ public class NotificationController : MonoBehaviour
 		tasks = new Task[model.Size];
 	}
 
-	void Update()
+	void FixedUpdate()
 	{
-		if(Input.GetKeyUp(KeyCode.I))
+		if(Input.GetKey(KeyCode.X))
 		{
 			view.ToggleQuestScreen();
 		}
 
-		if(view.WindowState && Input.GetKeyUp(KeyCode.Space))
+		if(view.WindowState && Input.GetKeyDown(KeyCode.Space))
 		{
 			view.DisableNotificationPanel();
 		}	

@@ -63,7 +63,7 @@ public class EndStatsView : MonoBehaviour {
 			Text status = taskListItem.FindChild("TaskListItemStatus").GetComponent<Text>();
 			Text points = taskListItem.FindChild("TaskListItemPoints").GetComponent<Text>();
 
-			name.text = task.name;
+			name.text = task.TaskName;
 			status.text = task.State.ToString();
 			int p = 0;
 			if (task.State == Task.CompleteState.completed)

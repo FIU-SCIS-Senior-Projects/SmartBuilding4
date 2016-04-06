@@ -1,13 +1,18 @@
 ﻿<Properties StartupItem="Assembly-CSharp-firstpass.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Room\RoomManager.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Notification System\NotificationController.cs">
     <Files>
+      <File FileName="Assets\Scripts\Notification System\NotificationController.cs" Line="27" Column="1" />
       <File FileName="Assets\Scripts\Room\RoomManager.cs" Line="8" Column="16" />
-      <File FileName="Assets\Scripts\Tasks\Task.cs" Line="72" Column="17" />
+      <File FileName="Assets\Scripts\Tasks\Task.cs" Line="89" Column="3" />
+      <File FileName="Assets\Scripts\EndStats\EndStatsView.cs" Line="66" Column="29" />
+      <File FileName="Assets\Scripts\Notification System\NotificationView.cs" Line="75" Column="41" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
-    <BreakpointStore />
+    <BreakpointStore>
+      <Breakpoint file="C:\Users\EMA\Desktop\SmartBuilding4\BB4\Assets\Scripts\Notification System\NotificationController.cs" line="27" column="27" />
+    </BreakpointStore>
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
 </Properties>
