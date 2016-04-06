@@ -6,7 +6,7 @@ public class EmissionController : MonoBehaviour {
 
 	EmissionView _view;
 	EmissionTracker _modal;
-
+	bool nearSwitch = false;
 	[SerializeField]Text totalEmissTemp;
 
 	void Start()
@@ -19,7 +19,25 @@ public class EmissionController : MonoBehaviour {
 	void Update () 
 	{
 		_modal.Emitting = _view.LightIsOn;
+		_view.TextState (nearSwitch);
+		//totalEmissTemp.text = _modal.TotalEmission.ToString();
+		if (nearSwitch && Input.GetKeyUp (KeyCode.Space)) 
+		{
+			_view.ToggleLight ();
+		}
+	}
 
-		totalEmissTemp.text = _modal.TotalEmission.ToString();
+	void OnTriggerEnter(Collider player)
+	{
+		if (player.CompareTag ("Player")) 
+		{
+			nearSwitch = true;
+		}
+	}
+		
+	void OnTriggerExit(Collider player)
+	{
+		nearSwitch = false;
+		Debug.Log ("Out");
 	}
 }

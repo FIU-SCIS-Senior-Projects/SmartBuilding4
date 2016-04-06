@@ -2,11 +2,13 @@
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
   <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Editor/SimulationMaker/TaskTimelineWindow.cs">
     <Files>
-      <File FileName="Assets/Scripts/Tasks/Task.cs" Line="71" Column="3" />
-      <File FileName="Assets/Editor/SimulationMaker/SimulationTaskDatabase.cs" Line="68" Column="3" />
-      <File FileName="Assets/Editor/SimulationMaker/TaskTimelineWindow.cs" Line="45" Column="2" />
-      <File FileName="Assets/Editor/MyEditor.cs" Line="80" Column="73" />
-      <File FileName="Assets/Scripts/MainMenu/MainMenuController.cs" Line="84" Column="24" />
+      <File FileName="Assets/Scripts/Tasks/Task.cs" Line="117" Column="3" />
+      <File FileName="Assets/Editor/SimulationMaker/TaskTimelineWindow.cs" Line="50" Column="20" />
+      <File FileName="Assets/Editor/MyEditor.cs" Line="89" Column="2" />
+      <File FileName="Assets/Scripts/MainMenu/MainMenuController.cs" Line="82" Column="4" />
+      <File FileName="Assets/Scripts/MainMenu/MainMenuView.cs" Line="18" Column="50" />
+      <File FileName="Assets/Scripts/SimulationMaker/SimulationTaskDatabase.cs" Line="107" Column="2" />
+      <File FileName="Assets/Scripts/Tasks/TaskStart.cs" Line="35" Column="36" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
