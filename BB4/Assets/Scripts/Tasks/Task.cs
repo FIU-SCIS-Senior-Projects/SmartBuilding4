@@ -1,7 +1,11 @@
 ﻿using UnityEngine;
 using System.Collections;
 
+<<<<<<< HEAD
 public class Task{
+=======
+public class Task {
+>>>>>>> origin/master
 
 
 	public enum TaskType {
@@ -86,5 +90,9 @@ public class Task{
 	public SimObject TaskObject {
 		get { return taskObject; }
 	}
+<<<<<<< HEAD
 
+=======
+		
+>>>>>>> origin/master
 }

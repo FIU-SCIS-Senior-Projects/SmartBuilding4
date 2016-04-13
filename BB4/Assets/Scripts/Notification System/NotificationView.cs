@@ -10,6 +10,7 @@ public class NotificationView : MonoBehaviour
 	[SerializeField]Text questDetails;
 	[SerializeField]Button[] questInfo;
 	bool enabledWindow;
+	bool questLog = false;
 	NotificationController ctrl;
 
 	#region Unity 
@@ -64,7 +65,14 @@ public class NotificationView : MonoBehaviour
 
 	public void ToggleQuestScreen()
 	{
-		questPanel.SetActive(!questPanel.activeSelf);
+		
+	}
+
+	IEnumerator ToggleQuestScreenAux()
+	{
+		questLog = !questLog;
+		questPanel.SetActive(questLog);
+		yield return new WaitForEndOfFrame ();
 	}
 	#endregion
 

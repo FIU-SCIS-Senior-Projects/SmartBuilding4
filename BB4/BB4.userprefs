@@ -1,5 +1,6 @@
 ﻿<Properties StartupItem="Assembly-CSharp-firstpass.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
+<<<<<<< HEAD
   <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\EnergyUsage\EnergyUsingObject.cs">
     <Files>
       <File FileName="Assets\Scripts\EnergyUsage\EnergyUsingObject.cs" Line="168" Column="25" />
@@ -11,12 +12,25 @@
       <File FileName="Assets\Scripts\Notification System\NotificationModel.cs" Line="1" Column="1" />
       <File FileName="Assets\Scripts\Notification System\NotificationView.cs" Line="1" Column="1" />
       <File FileName="Assets\Scripts\HUD\HUDController.cs" Line="1" Column="1" />
+=======
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Notification System\NotificationController.cs">
+    <Files>
+      <File FileName="Assets\Scripts\Notification System\NotificationController.cs" Line="27" Column="1" />
+      <File FileName="Assets\Scripts\Room\RoomManager.cs" Line="8" Column="16" />
+      <File FileName="Assets\Scripts\Tasks\Task.cs" Line="89" Column="3" />
+      <File FileName="Assets\Scripts\EndStats\EndStatsView.cs" Line="66" Column="29" />
+      <File FileName="Assets\Scripts\Notification System\NotificationView.cs" Line="75" Column="41" />
+>>>>>>> origin/master
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore>
+<<<<<<< HEAD
       <Breakpoint file="C:\Users\Ema\Desktop\SeniorProject\SmartBuilding4\BB4\Assets\Scripts\Notification System\NotificationController.cs" line="41" column="5" />
       <Breakpoint file="C:\Users\Ema\Desktop\SeniorProject\SmartBuilding4\BB4\Assets\Scripts\Room\RoomManager.cs" line="22" column="1" />
+=======
+      <Breakpoint file="C:\Users\EMA\Desktop\SmartBuilding4\BB4\Assets\Scripts\Notification System\NotificationController.cs" line="27" column="27" />
+>>>>>>> origin/master
     </BreakpointStore>
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
