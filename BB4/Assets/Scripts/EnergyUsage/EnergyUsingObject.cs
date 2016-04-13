@@ -29,6 +29,7 @@ public class EnergyUsingObject : SimObject {
 	public string objectType;
 	#endregion
 
+	Light lSrc;
 
 	TimeScaleController scale;
 
@@ -37,6 +38,8 @@ public class EnergyUsingObject : SimObject {
 		scale = GameObject.Find("TimeTracker+Scale").GetComponent<TimeScaleController>();
 		if (scale == null)
 			Debug.LogWarning("NO TIME SCALE FOUND!!!");
+
+		lSrc = GetComponentInChildren<Light>();
 	}
 
 
@@ -160,6 +163,10 @@ public class EnergyUsingObject : SimObject {
 	public bool powerOn() {
 		if (hasPower()) {
 			powerSupply.setIsOn(true);
+			if(lSrc != null)
+			{
+				lSrc.enabled = true;
+			}
 			return true;
 		}
 		else {
@@ -172,6 +179,10 @@ public class EnergyUsingObject : SimObject {
 	/// </summary>
 	public bool powerOff() {
 		powerSupply.setIsOn(false);
+		if(lSrc != null)
+		{
+			lSrc.enabled = false;
+		}
 		return true;
 	}
 	

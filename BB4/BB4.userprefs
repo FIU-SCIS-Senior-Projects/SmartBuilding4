@@ -1,13 +1,23 @@
 ﻿<Properties StartupItem="Assembly-CSharp-firstpass.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Room\RoomManager.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\EnergyUsage\EnergyUsingObject.cs">
     <Files>
-      <File FileName="Assets\Scripts\Room\RoomManager.cs" Line="8" Column="16" />
-      <File FileName="Assets\Scripts\Tasks\Task.cs" Line="72" Column="17" />
+      <File FileName="Assets\Scripts\EnergyUsage\EnergyUsingObject.cs" Line="168" Column="25" />
+      <File FileName="Assets\Scripts\CharacterController\SmartBuildingCharacterController.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\Room\RoomManager.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\Tasks\Task.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\Notification System\NotificationController.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\Room\RoomModal.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\Notification System\NotificationModel.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\Notification System\NotificationView.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\HUD\HUDController.cs" Line="1" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
-    <BreakpointStore />
+    <BreakpointStore>
+      <Breakpoint file="C:\Users\Ema\Desktop\SeniorProject\SmartBuilding4\BB4\Assets\Scripts\Notification System\NotificationController.cs" line="41" column="5" />
+      <Breakpoint file="C:\Users\Ema\Desktop\SeniorProject\SmartBuilding4\BB4\Assets\Scripts\Room\RoomManager.cs" line="22" column="1" />
+    </BreakpointStore>
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
 </Properties>
