@@ -5,20 +5,24 @@ using System.Collections;
 [RequireComponent(typeof(CapsuleCollider))]
 public class SmartBuildingCharacterController : MonoBehaviour 
 {
+
+
 	[SerializeField]float _moveSpeed = 10.0f;
 	[SerializeField]float rotateSpeed = 10.0f;
 	[SerializeField]float gravity = 10.0f; 
 	[SerializeField]float maxVelocityChange = 10.0f;
 	[SerializeField]bool canJump = false;
 	[SerializeField]float jumpHeight = 2.0f;
-	bool grounded = true; 
-	Rigidbody rigidBody; 
+	public bool grounded = true; 
+	public Rigidbody rigidBody; 
+	Transform fPCam;
 
 	void Awake()
 	{
 		rigidBody = GetComponent<Rigidbody> ();
 		rigidBody.freezeRotation = true; 
 		rigidBody.useGravity = false; 
+		fPCam = GetComponentInChildren<Camera> ().transform;
 	}
 
 	void FixedUpdate()
