@@ -1,11 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-<<<<<<< HEAD
-public class Task{
-=======
-public class Task {
->>>>>>> origin/master
+public class Task : MonoBehaviour {
 
 
 	public enum TaskType {
@@ -19,10 +15,6 @@ public class Task {
 	public TaskType Type {
 		get {
 			return type;
-		}
-
-		set	{
-			type = value;
 		}
 	}
 
@@ -90,9 +82,22 @@ public class Task {
 	public SimObject TaskObject {
 		get { return taskObject; }
 	}
-<<<<<<< HEAD
 
-=======
-		
->>>>>>> origin/master
+
+	void Awake() {
+
+	}
+
+	// Use this for initialization
+	void Start () {
+
+	}
+	
+	// Update is called once per frame
+	void Update () {
+	
+	}
+
+
+
 }

@@ -1,37 +1,18 @@
-﻿<Properties StartupItem="Assembly-CSharp-firstpass.csproj">
+﻿<Properties StartupItem="Assembly-CSharp.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
-<<<<<<< HEAD
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\EnergyUsage\EnergyUsingObject.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Editor/SimulationMaker/TaskTimelineWindow.cs">
     <Files>
-      <File FileName="Assets\Scripts\EnergyUsage\EnergyUsingObject.cs" Line="168" Column="25" />
-      <File FileName="Assets\Scripts\CharacterController\SmartBuildingCharacterController.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\Room\RoomManager.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\Tasks\Task.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\Notification System\NotificationController.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\Room\RoomModal.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\Notification System\NotificationModel.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\Notification System\NotificationView.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\HUD\HUDController.cs" Line="1" Column="1" />
-=======
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Notification System\NotificationController.cs">
-    <Files>
-      <File FileName="Assets\Scripts\Notification System\NotificationController.cs" Line="27" Column="1" />
-      <File FileName="Assets\Scripts\Room\RoomManager.cs" Line="8" Column="16" />
-      <File FileName="Assets\Scripts\Tasks\Task.cs" Line="89" Column="3" />
-      <File FileName="Assets\Scripts\EndStats\EndStatsView.cs" Line="66" Column="29" />
-      <File FileName="Assets\Scripts\Notification System\NotificationView.cs" Line="75" Column="41" />
->>>>>>> origin/master
+      <File FileName="Assets/Scripts/Tasks/Task.cs" Line="117" Column="3" />
+      <File FileName="Assets/Editor/SimulationMaker/TaskTimelineWindow.cs" Line="50" Column="20" />
+      <File FileName="Assets/Editor/MyEditor.cs" Line="89" Column="2" />
+      <File FileName="Assets/Scripts/MainMenu/MainMenuController.cs" Line="82" Column="4" />
+      <File FileName="Assets/Scripts/MainMenu/MainMenuView.cs" Line="18" Column="50" />
+      <File FileName="Assets/Scripts/SimulationMaker/SimulationTaskDatabase.cs" Line="107" Column="2" />
+      <File FileName="Assets/Scripts/Tasks/TaskStart.cs" Line="35" Column="36" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
-    <BreakpointStore>
-<<<<<<< HEAD
-      <Breakpoint file="C:\Users\Ema\Desktop\SeniorProject\SmartBuilding4\BB4\Assets\Scripts\Notification System\NotificationController.cs" line="41" column="5" />
-      <Breakpoint file="C:\Users\Ema\Desktop\SeniorProject\SmartBuilding4\BB4\Assets\Scripts\Room\RoomManager.cs" line="22" column="1" />
-=======
-      <Breakpoint file="C:\Users\EMA\Desktop\SmartBuilding4\BB4\Assets\Scripts\Notification System\NotificationController.cs" line="27" column="27" />
->>>>>>> origin/master
-    </BreakpointStore>
+    <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
 </Properties>

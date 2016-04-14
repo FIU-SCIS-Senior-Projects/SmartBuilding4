@@ -13,7 +13,6 @@ public class SmartBuildingCharacterController : MonoBehaviour
 	[SerializeField]float maxVelocityChange = 10.0f;
 	[SerializeField]bool canJump = false;
 	[SerializeField]float jumpHeight = 2.0f;
-	[SerializeField]GameObject menu;
 	public bool grounded = true; 
 	public Rigidbody rigidBody; 
 	Transform fPCam;
@@ -60,20 +59,9 @@ public class SmartBuildingCharacterController : MonoBehaviour
 		rigidBody.AddForce (new Vector3 (0, -gravity * rigidBody.mass, 0));
 		
 		//grounded = false; 
-
-		if(Input.GetButton("Menu"))
-		{
-			StartCoroutine( ToggleMenuDisplay());
-		}
 	}
 	float CalculateJumpVerticalSpeed()
 	{
 		return Mathf.Sqrt (2 * jumpHeight * gravity);
-	}
-
-	IEnumerator ToggleMenuDisplay()
-	{
-		menu.SetActive(!menu.activeInHierarchy);
-		yield return new WaitForSeconds(1.5f);
 	}
 }

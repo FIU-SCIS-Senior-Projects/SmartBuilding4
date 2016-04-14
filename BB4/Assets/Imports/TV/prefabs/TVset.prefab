@@ -10,6 +10,9 @@ GameObject:
   - 4: {fileID: 445052}
   - 33: {fileID: 3378584}
   - 23: {fileID: 2381144}
+  - 65: {fileID: 6579574}
+  - 114: {fileID: 11405654}
+  - 114: {fileID: 11402932}
   m_Layer: 0
   m_Name: TVset
   m_TagString: Untagged
@@ -23,9 +26,9 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 189024}
-  m_LocalRotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1.628875, y: 0.93461156, z: 1.1641103}
+  m_LocalRotation: {x: -0.49890512, y: 0.5010925, z: 0.5010925, w: 0.49890518}
+  m_LocalPosition: {x: -6.4085693, y: 1.63, z: 0.22841454}
+  m_LocalScale: {x: 1.6288753, y: 0.93461156, z: 1.1641103}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -62,6 +65,50 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 189024}
   m_Mesh: {fileID: 4300000, guid: 6385f8f25b43f5d4cb273222e7a3c727, type: 3}
+--- !u!65 &6579574
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 189024}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.18, y: 0.33, z: 1.09}
+  m_Center: {x: 2.539022e-15, y: -0.00000011920929, z: 0.00000022351742}
+--- !u!114 &11402932
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 189024}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 785e263acc37e4d748b33581d9009e2a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &11405654
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 189024}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f3cb5011dc66540fd8c53a8fa135a2cb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  name: Television
+  description: There's always commercials... :(
+  powerSupply:
+    avgUsePerSec: 15
+    totalUse: 0
+    plugLoad: {fileID: 0}
+    isOn: 1
+    isEnergySupplied: 1
+    batteryList: []
+  objectType: Object
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1
