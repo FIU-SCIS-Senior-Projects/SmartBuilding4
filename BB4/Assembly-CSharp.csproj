@@ -85,6 +85,9 @@
      <Compile Include="Assets\Scripts\HUD\HUDController.cs" />
      <Compile Include="Assets\Scripts\HUD\HUDView.cs" />
      <Compile Include="Assets\Scripts\HUD\SimObject.cs" />
+     <Compile Include="Assets\Scripts\InteractionwithObject\InteractionController.cs" />
+     <Compile Include="Assets\Scripts\InteractionwithObject\InteractionObject.cs" />
+     <Compile Include="Assets\Scripts\InteractionwithObject\InteractionView.cs" />
      <Compile Include="Assets\Scripts\LightEmission\EmissionController.cs" />
      <Compile Include="Assets\Scripts\LightEmission\EmissionTracker.cs" />
      <Compile Include="Assets\Scripts\LightEmission\EmissionView.cs" />
