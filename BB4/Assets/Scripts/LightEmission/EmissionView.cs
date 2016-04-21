@@ -34,7 +34,8 @@ public class EmissionView : MonoBehaviour
 	{
 		_isOn = !_isOn;
 		foreach(Light l in spotLight)
-			l.enabled = _isOn;
+			if (l != null)
+				l.enabled = _isOn;
 	}
 		
 	public bool LightIsOn

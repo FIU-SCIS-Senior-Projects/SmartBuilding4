@@ -106,6 +106,11 @@ public class TaskTimelineWindow : EditorWindow {
 			else
 				selectedSimulation = null;
 
+			//deselect all simulations.
+			foreach (DatabaseSimulation s in db.simulations)
+				s.selected = false;
+			
+
 			if (GUILayout.Button("Create Simulation")) {
 				if (EditorUtility.DisplayDialog("Confirm", "Continuing will lose unsaved changes to current simulation", "Continue", "Cancel")) {
 					DatabaseSimulation sim = new DatabaseSimulation();
@@ -117,6 +122,9 @@ public class TaskTimelineWindow : EditorWindow {
 		EditorGUILayout.EndHorizontal();
 
 		if (selectedSimulation != null) {
+
+			//select this simulation.
+			selectedSimulation.selected = true;
 
 			//Simulation variables.
 
@@ -177,6 +185,11 @@ public class TaskTimelineWindow : EditorWindow {
 				{
 					selectedTask.name = EditorGUILayout.TextField("Task Name", selectedTask.name);
 					selectedTask.type = (Task.TaskType)EditorGUILayout.EnumPopup("Type", selectedTask.type);
+
+					if (selectedTask.type == Task.TaskType.MoveObject || selectedTask.type == Task.TaskType.TurnOff || selectedTask.type == Task.TaskType.TurnOn) {
+						selectedTask.taskObject = (SimObject)EditorGUILayout.ObjectField(selectedTask.taskObject, typeof(SimObject), true);
+					}
+
 				}
 				EditorGUILayout.EndHorizontal();
 

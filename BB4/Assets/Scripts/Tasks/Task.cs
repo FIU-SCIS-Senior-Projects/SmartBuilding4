@@ -21,6 +21,7 @@ public class Task : MonoBehaviour {
 	public enum CompleteState {
 		inProgress,
 		completed,
+		neverStarted,
 		failed
 	}
 	[SerializeField] CompleteState state = CompleteState.inProgress;
@@ -55,11 +56,13 @@ public class Task : MonoBehaviour {
 
 	int startTime;
 	public int StartTime {
+		set { startTime = value; }
 		get { return startTime; }
 	}
 
 	int timeLimit;
 	public int TimeLimit {
+		set { timeLimit = value; }
 		get {
 			return timeLimit;
 		}
@@ -67,11 +70,13 @@ public class Task : MonoBehaviour {
 
 	int timeLength;
 	public int TimeLength {
+		set { timeLength = value; }
 		get { return timeLength; }
 	}
 
 	int pointValue;
 	public int PointValue { 
+		set { pointValue = value; }
 		get { 
 			return pointValue; 
 		} 
