@@ -1,10 +1,13 @@
 ﻿<Properties StartupItem="Assembly-CSharp.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\InteractionwithObject\InteractionController.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/Managers/SimulationManager.cs">
     <Files>
-      <File FileName="Assets\Scripts\InteractionwithObject\InteractionController.cs" Line="78" Column="3" />
-      <File FileName="Assets\Scripts\InteractionwithObject\InteractionObject.cs" Line="24" Column="21" />
-      <File FileName="Assets\Scripts\InteractionwithObject\InteractionView.cs" Line="24" Column="27" />
+      <File FileName="Assets/Scripts/Tasks/Task.cs" Line="1" Column="1" />
+      <File FileName="Assets/Editor/SimulationMaker/TaskTimelineWindow.cs" Line="1" Column="1" />
+      <File FileName="Assets/Editor/MyEditor.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/MainMenu/MainMenuController.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/MainMenu/MainMenuView.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/Managers/SimulationManager.cs" Line="1" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
