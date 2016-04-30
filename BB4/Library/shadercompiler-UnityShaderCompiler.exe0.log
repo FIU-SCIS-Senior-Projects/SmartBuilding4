@@ -1,19 +1,2 @@
 Base path: C:/Program Files/PUnity/Editor/Data
 Cmd: getPlatforms
-Cmd: preprocess
-  insize=1376 outsize=650 ok=1
-Cmd: preprocess
-  insize=1060 outsize=1583 ok=1
-Cmd: preprocess
-  insize=1062 outsize=1759 ok=1
-Cmd: preprocess
-  insize=946 outsize=1654 ok=1
-Cmd: preprocess
-  insize=1294 outsize=1879 ok=1
-Cmd: preprocess
-  insize=1569 outsize=649 ok=1
-Cmd: preprocess
-  insize=316 outsize=316 ok=1
-Cmd: preprocess
-  error: 2 plat 18 at (28): Too many texture interpolators would be used for ForwardBase pass (11 out of max 10)
-  insize=3198 outsize=1700 ok=0
