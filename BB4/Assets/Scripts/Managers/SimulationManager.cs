@@ -54,6 +54,16 @@ public class SimulationManager {
 
 	List<Task> taskList = new List<Task>();
 
+	Task currentTask;
+	public Task CurrentTask {
+		get {
+			return currentTask;
+		}
+		set {
+			currentTask = value;
+		}
+	}
+
 
 
 	/// <summary>
@@ -153,5 +163,12 @@ public class SimulationManager {
 		return total;
 	}
 
+
+
+
+	public int getSimStartTime() {
+
+		return timeTracker.getSimStartTime();
+	}
 
 }

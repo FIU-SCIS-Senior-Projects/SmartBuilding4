@@ -29,8 +29,13 @@ public class EmissionView : MonoBehaviour
 		_isOn = !_isOn;
 		_buttonText.text = (_isOn) ? "TURN OFF" :  "TURN ON";
 		foreach(Light l in spotLight)
-			l.enabled = _isOn;
+//<<<<<<< HEAD
+			if (l != null)
+				l.enabled = _isOn;
+//=======
+//			l.enabled = _isOn;
 		
+//>>>>>>> Sprint6_2_E
 	}
 		
 	public bool LightIsOn

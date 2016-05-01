@@ -1,13 +1,23 @@
 ﻿<Properties StartupItem="Assembly-CSharp.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
+<<<<<<< HEAD
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/SimObject.cs">
+=======
   <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/Managers/SimulationManager.cs">
+>>>>>>> Sprint6_2_E
     <Files>
       <File FileName="Assets/Scripts/Tasks/Task.cs" Line="1" Column="1" />
       <File FileName="Assets/Editor/SimulationMaker/TaskTimelineWindow.cs" Line="1" Column="1" />
       <File FileName="Assets/Editor/MyEditor.cs" Line="1" Column="1" />
       <File FileName="Assets/Scripts/MainMenu/MainMenuController.cs" Line="1" Column="1" />
       <File FileName="Assets/Scripts/MainMenu/MainMenuView.cs" Line="1" Column="1" />
+<<<<<<< HEAD
+      <File FileName="Assets/Scripts/SimObject.cs" Line="41" Column="3" />
+      <File FileName="Assets/Scripts/Managers/SimulationManager.cs" Line="79" Column="14" />
+      <File FileName="Assets/Scripts/Tasks/SimulationTaskDatabase.cs" Line="1" Column="1" />
+=======
       <File FileName="Assets/Scripts/Managers/SimulationManager.cs" Line="1" Column="1" />
+>>>>>>> Sprint6_2_E
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

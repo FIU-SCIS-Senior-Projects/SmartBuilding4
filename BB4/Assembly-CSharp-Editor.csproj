@@ -50,7 +50,6 @@
      <Compile Include="Assets\Editor\EnergyUsage\EnergyUsingObjectEditor.cs" />
      <Compile Include="Assets\Editor\MyEditor.cs" />
      <Compile Include="Assets\Editor\PlugLoad\PlugLoadEditor.cs" />
-     <Compile Include="Assets\Editor\SimulationMaker\SimulationTaskDatabase.cs" />
      <Compile Include="Assets\Editor\SimulationMaker\TaskTimelineWindow.cs" />
      <Compile Include="Assets\OVR\Editor\OVRBuild.cs" />
      <Compile Include="Assets\OVR\Moonlight\Editor\OVRMoonlightLoader.cs" />

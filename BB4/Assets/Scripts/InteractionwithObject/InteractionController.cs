@@ -79,10 +79,34 @@ public class InteractionController : MonoBehaviour {
 		x.transform.position = Vector3.Lerp(x.transform.position, transform.position + transform.forward * distance, Time.time);
 		if(Input.GetKeyDown(KeyCode.P))
 		{
-			x.isKinematic = false;
-			carrying = false; 
-			carryingObject = null;
-			selectedObject = null;
+			drop(x);
 		}
 	}
+
+
+
+
+
+	//JUSTIN's METHODS
+
+
+	bool isAtDropZone() {
+
+
+
+	}
+
+
+	void drop(Rigidbody x) {
+
+		x.isKinematic = false;
+		carrying = false; 
+		carryingObject = null;
+		selectedObject = null;
+
+
+
+	}
+
+
 }
