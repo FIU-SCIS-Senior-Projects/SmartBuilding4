@@ -20,7 +20,7 @@ public class EmissionController : MonoBehaviour {
 	{
 		_modal.Emitting = _view.LightIsOn;
 		//totalEmissTemp.text = _modal.TotalEmission.ToString();
-		if (nearSwitch && Input.GetButtonUp ("Toggle")) 
+		if (nearSwitch && Input.GetKeyUp (KeyCode.Space)) 
 		{
 			_view.ToggleLight ();
 		}

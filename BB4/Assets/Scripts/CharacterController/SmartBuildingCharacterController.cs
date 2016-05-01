@@ -39,7 +39,7 @@ public class SmartBuildingCharacterController : MonoBehaviour
 	{
 		if (grounded) {
 			Vector3 targetVelocity = new Vector3(Input.GetAxis("Strife"), 0, Input.GetAxis("Vertical"));
-			transform.eulerAngles += new Vector3(Input.GetAxis("LookAround") * rotateSpeed, Input.GetAxis("Horizontal") * rotateSpeed, 0);
+			transform.eulerAngles += new Vector3(0, Input.GetAxis("Horizontal") * rotateSpeed, 0);
 			targetVelocity = transform.TransformDirection(targetVelocity);
 			targetVelocity *= _moveSpeed;
 			

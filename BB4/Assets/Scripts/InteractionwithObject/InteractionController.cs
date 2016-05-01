@@ -52,7 +52,7 @@ public class InteractionController : MonoBehaviour {
 
 	void PickUp()
 	{
-		if(Input.GetButtonUp("PickUp"))
+		if(Input.GetKeyDown(KeyCode.P))//Input.GetKey("PickUp"))
 		{
 			float x = Screen.width /2; 
 			float y = Screen.height/2;
@@ -77,7 +77,7 @@ public class InteractionController : MonoBehaviour {
 	{
 		x.isKinematic = true;
 		x.transform.position = Vector3.Lerp(x.transform.position, transform.position + transform.forward * distance, Time.time);
-		if(Input.GetButtonUp("PickUp"))
+		if(Input.GetKeyDown(KeyCode.P))
 		{
 			x.isKinematic = false;
 			carrying = false; 
