@@ -382,4 +382,11 @@ public class TimeTrackerController : MonoBehaviour {
 		return secondsInCurrentDay;
 	}
 
+
+
+
+	public int getSimStartTime() {
+		return timeTracker.getSimStartTime();
+	}
+
 }

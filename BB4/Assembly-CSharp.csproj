@@ -84,7 +84,10 @@
      <Compile Include="Assets\Scripts\HUD\HUD.cs" />
      <Compile Include="Assets\Scripts\HUD\HUDController.cs" />
      <Compile Include="Assets\Scripts\HUD\HUDView.cs" />
-     <Compile Include="Assets\Scripts\HUD\SimObject.cs" />
+     <Compile Include="Assets\Scripts\InteractionwithObject\DropZone.cs" />
+     <Compile Include="Assets\Scripts\InteractionwithObject\InteractionController.cs" />
+     <Compile Include="Assets\Scripts\InteractionwithObject\InteractionObject.cs" />
+     <Compile Include="Assets\Scripts\InteractionwithObject\InteractionView.cs" />
      <Compile Include="Assets\Scripts\LightEmission\EmissionController.cs" />
      <Compile Include="Assets\Scripts\LightEmission\EmissionTracker.cs" />
      <Compile Include="Assets\Scripts\LightEmission\EmissionView.cs" />
@@ -102,7 +105,10 @@
      <Compile Include="Assets\Scripts\Room\RoomManager.cs" />
      <Compile Include="Assets\Scripts\Room\RoomModal.cs" />
      <Compile Include="Assets\Scripts\Room\RoomView.cs" />
+     <Compile Include="Assets\Scripts\SimObject.cs" />
+     <Compile Include="Assets\Scripts\Tasks\SimulationTaskDatabase.cs" />
      <Compile Include="Assets\Scripts\Tasks\Task.cs" />
+     <Compile Include="Assets\Scripts\Tasks\TaskStart.cs" />
      <Compile Include="Assets\Scripts\TimeScale\TimeScale.cs" />
      <Compile Include="Assets\Scripts\TimeScale\TimeScaleController.cs" />
      <Compile Include="Assets\Scripts\TimeTracking\TimeTracker.cs" />

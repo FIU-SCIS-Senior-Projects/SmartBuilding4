@@ -19,7 +19,6 @@ public class EmissionController : MonoBehaviour {
 	void Update () 
 	{
 		_modal.Emitting = _view.LightIsOn;
-		_view.TextState (nearSwitch);
 		//totalEmissTemp.text = _modal.TotalEmission.ToString();
 		if (nearSwitch && Input.GetKeyUp (KeyCode.Space)) 
 		{
@@ -32,12 +31,14 @@ public class EmissionController : MonoBehaviour {
 		if (player.CompareTag ("Player")) 
 		{
 			nearSwitch = true;
+			_view.TextState (true);
 		}
 	}
 		
 	void OnTriggerExit(Collider player)
 	{
 		nearSwitch = false;
+		_view.TextState (false);
 		Debug.Log ("Out");
 	}
 }

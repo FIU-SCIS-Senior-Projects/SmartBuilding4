@@ -17,24 +17,25 @@ public class EmissionView : MonoBehaviour
 		// Update is called once per frame
 	void Update () 
 	{
-		if (_isOn) {
-			_buttonText.text = "TURN OFF";
-		}
-		else {
-			_buttonText.text = "TURN ON";
-			_buttonText.gameObject.SetActive (true);
-		}
 	}
 
 	public void TextState(bool state){
+		
 		_buttonText.gameObject.SetActive (state);
 	}
 
 	public void ToggleLight()
 	{
 		_isOn = !_isOn;
+		_buttonText.text = (_isOn) ? "TURN OFF" :  "TURN ON";
 		foreach(Light l in spotLight)
-			l.enabled = _isOn;
+//<<<<<<< HEAD
+			if (l != null)
+				l.enabled = _isOn;
+//=======
+//			l.enabled = _isOn;
+		
+//>>>>>>> Sprint6_2_E
 	}
 		
 	public bool LightIsOn
