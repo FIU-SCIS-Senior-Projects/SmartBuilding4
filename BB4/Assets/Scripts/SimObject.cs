@@ -1,6 +1,9 @@
 ﻿using UnityEngine;
 using System.Collections;
 
+using System.Collections.Generic;
+using System.Linq;
+
 
 [RequireComponent(typeof(MeshRenderer))]
 [RequireComponent(typeof(MeshFilter))]
@@ -8,7 +11,6 @@ using System.Collections;
 public class SimObject : MonoBehaviour {
 
 
-	SimulationManager sm;
 
 
 	#region
@@ -19,9 +21,18 @@ public class SimObject : MonoBehaviour {
 	string description;
 	#endregion
 
+
+	[SerializeField] public SimulationManager.TaskObjectMove taskObjectMove = SimulationManager.TaskObjectMove.None;
+	[SerializeField] public SimulationManager.TaskObjectTurnOnOff taskObjectTurnOnOff = SimulationManager.TaskObjectTurnOnOff.None;
+	[SerializeField] public SimulationManager.DropZone drop = SimulationManager.DropZone.None;
+
+
 	void Awake() {
 		//check the current task.
-		sm = SimulationManager.sharedSimManager;
+
+	}
+
+	void Start() {
 	}
 
 	public string getName() {
@@ -45,27 +56,75 @@ public class SimObject : MonoBehaviour {
 	/// in a way that would complete a task.
 	/// Uses simulation manager to get the current task
 	/// </summary>
-	public virtual void checkTaskCompletion() {
+	public virtual void checkTaskCompletion(DropZone dz) {
 
-		Task t = sm.CurrentTask;
 
-		//make sure a task exists.
-		if (t != null) {
 
-			//if the tasks interaction object is this object.
-			if (t.TaskObject == this) { //you've completed this task.
+		if (dz != null) {
 
-				//you've just completed the task.
-				Debug.Log("Completed Task");
+			//check if I'm a task object.
+			foreach (Task t in SimulationManager.sharedSimManager.getListOfTasks(Task.CompleteState.inProgress)) {
 
-				t.State = Task.CompleteState.completed;
+				//if the task types match... then check task completion.
+				if (taskObjectMove == t.TaskObjectMove && dz.drop == t.Drop) {
+					Debug.Log("Landed On Drop Zone");
+					//you've just completed the task.
+					Debug.Log("Completed Task");
 
+					t.State = Task.CompleteState.completed;
+				}
 			}
 
 		}
 
+
+
 	}
 
+	public void checkTaskTurnOn() {
+		foreach(Task t in SimulationManager.sharedSimManager.getListOfTasks(Task.CompleteState.inProgress)) {
+
+			//make sure a task exists.
+			if (t != null) {
+
+				//if the tasks interaction object is this object.
+				if (t.TaskObjectTurnOnOff == taskObjectTurnOnOff) { //you've completed this task.
+
+					if (t.Type == Task.TaskType.TurnOn) {
+
+						//you've just completed the task.
+						Debug.Log("Completed Task");
+
+						t.State = Task.CompleteState.completed;
+
+						break;
+					}
+				}
+			}
+		}
+	}
+
+	public void checkTaskTurnOff() {
+
+		foreach(Task t in SimulationManager.sharedSimManager.getListOfTasks(Task.CompleteState.inProgress)) {
+
+			//make sure a task exists.
+			if (t != null) {
+
+				//if the tasks interaction object is this object.
+				if (t.TaskObjectTurnOnOff == taskObjectTurnOnOff) { //you've completed this task.
+
+					if (t.Type == Task.TaskType.TurnOff) {
+
+						//you've just completed the task.
+						Debug.Log("Completed Task");
+
+						t.State = Task.CompleteState.completed;
+					}
+				}
+			}
+		}
+	}
 }
 
  

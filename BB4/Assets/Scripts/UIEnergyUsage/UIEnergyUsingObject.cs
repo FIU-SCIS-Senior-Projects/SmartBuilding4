@@ -73,7 +73,7 @@ public class UIEnergyUsingObject : MonoBehaviour {
 	/// <summary>
 	/// Shows the UI.
 	/// </summary>
-	void showUI() {
+	public void showUI() {
 		//destroy it incase it already exists for some reason.
 		//hideUI();
 
@@ -114,7 +114,7 @@ public class UIEnergyUsingObject : MonoBehaviour {
 	/// <summary>
 	/// Hides the UI.
 	/// </summary>
-	void hideUI() {
+	public void hideUI() {
 		//if the ui is there.. destroy and nullify it.
 		if (currentUI != null) {
 			GameObject.Destroy(currentUI);

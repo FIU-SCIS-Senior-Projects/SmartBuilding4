@@ -2,25 +2,32 @@
 using System.Collections;
 
 [RequireComponent(typeof(Rigidbody))]
+
+[RequireComponent(typeof(InteractionView))]
+
 public class InteractionObject : MonoBehaviour {
 
-	[SerializeField]bool canPickUp = false;
-	[SerializeField]bool canToggle = false;
+	public bool canPickUp = false;
+	public bool canToggle = false;
 
 	Rigidbody rBody;
-
+	UIEnergyUsingObject uiObj;
 	// Use this for initialization
 	void Start () {
 		rBody = GetComponent<Rigidbody>();
-	}
-	
-	// Update is called once per frame
-	void Update () {
-	
-	}
+		if (canToggle) {
+			uiObj = GetComponent<UIEnergyUsingObject> ();
+		}
 
+	}
+		
 	public Rigidbody RBody
 	{
 		get{return rBody;}
+	}
+
+	public UIEnergyUsingObject UIctrl
+	{
+		get{return uiObj; }
 	}
 }

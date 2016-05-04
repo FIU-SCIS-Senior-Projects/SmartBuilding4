@@ -160,6 +160,11 @@ public class EnergyUsingObject : SimObject {
 	public bool powerOn() {
 		if (hasPower()) {
 			powerSupply.setIsOn(true);
+
+			//check task completion.
+			checkTaskTurnOn();
+
+
 			return true;
 		}
 		else {
@@ -172,6 +177,10 @@ public class EnergyUsingObject : SimObject {
 	/// </summary>
 	public bool powerOff() {
 		powerSupply.setIsOn(false);
+
+		//check task completion.
+		checkTaskTurnOff();
+
 		return true;
 	}
 	

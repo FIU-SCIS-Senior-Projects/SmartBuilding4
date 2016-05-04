@@ -15,15 +15,15 @@ public class RoomView : MonoBehaviour
 	{
 		while(roomNameDisplay.alpha < 1)
 		{
-			roomNameDisplay.alpha += Time.deltaTime;
+			roomNameDisplay.alpha += Time.deltaTime*2;
 			yield return null;
 		}
 
-		yield return new WaitForSeconds(1f);
+		yield return new WaitForSeconds(.2f);
 
 		while(roomNameDisplay.alpha > 0 )
 		{
-			roomNameDisplay.alpha -= Time.deltaTime;
+			roomNameDisplay.alpha -= Time.deltaTime*2;
 			yield return null;
 		}
 	}
