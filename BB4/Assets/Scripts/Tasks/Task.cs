@@ -16,13 +16,17 @@ public class Task : MonoBehaviour {
 		get {
 			return type;
 		}
+		set {
+			type = value;
+		}
 	}
 
 	public enum CompleteState {
 		inProgress,
 		completed,
 		neverStarted,
-		failed
+		failed,
+		completedCompleted
 	}
 	[SerializeField] CompleteState state = CompleteState.inProgress;
 	public CompleteState State {
@@ -82,10 +86,36 @@ public class Task : MonoBehaviour {
 		} 
 	}
 
-
+	/*
 	[SerializeField] SimObject taskObject;
 	public SimObject TaskObject {
+		set { taskObject = value; }
 		get { return taskObject; }
+	}
+	*/
+	[SerializeField] SimulationManager.TaskObjectMove taskObjectMove;
+	public SimulationManager.TaskObjectMove TaskObjectMove {
+		set { taskObjectMove = value; }
+		get { return taskObjectMove; }
+	}
+	[SerializeField] SimulationManager.TaskObjectTurnOnOff taskObjectTurnOnOff;
+	public SimulationManager.TaskObjectTurnOnOff TaskObjectTurnOnOff {
+		set { taskObjectTurnOnOff = value; }
+		get { return taskObjectTurnOnOff; }
+	}
+
+
+	/*
+	[SerializeField] DropZone drop;
+	public DropZone Drop {
+		set {drop = value;}
+		get { return drop; }
+	}
+	*/
+	[SerializeField] SimulationManager.DropZone drop;
+	public SimulationManager.DropZone Drop {
+		set { drop = value; }
+		get { return drop; }
 	}
 
 

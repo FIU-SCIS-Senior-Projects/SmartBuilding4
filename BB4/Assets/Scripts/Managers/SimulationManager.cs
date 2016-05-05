@@ -54,15 +54,7 @@ public class SimulationManager {
 
 	List<Task> taskList = new List<Task>();
 
-	Task currentTask;
-	public Task CurrentTask {
-		get {
-			return currentTask;
-		}
-		set {
-			currentTask = value;
-		}
-	}
+
 
 
 
@@ -170,5 +162,69 @@ public class SimulationManager {
 
 		return timeTracker.getSimStartTime();
 	}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	/*
+	 * 
+	 * 
+	 * ----- Defining all the task objects and drop zones.
+	 * 
+	 */
+
+
+	public enum TaskObjectMove {
+		None,
+		Laptop,
+		Cube
+	}
+	public enum TaskObjectTurnOnOff {
+		None,
+		LightLiving,
+		LightKitchen,
+		LightBedroom,
+
+		TV,
+		LampCorner,
+		LampCouch,
+
+		Oven,
+		Fridge,
+
+		Laptop
+	}
+
+	public enum DropZone {
+		None,
+
+		KitchenCounter,
+		Stovetop,
+
+		Couch,
+		CoffeeTable,
+
+		Bed,
+		Desk,
+
+		FloorLiving,
+		FloorKitchen,
+		FloorBedroom
+	}
+
+
+
+
 
 }

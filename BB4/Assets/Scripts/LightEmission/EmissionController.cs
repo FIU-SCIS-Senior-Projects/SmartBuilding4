@@ -19,8 +19,9 @@ public class EmissionController : MonoBehaviour {
 	void Update () 
 	{
 		_modal.Emitting = _view.LightIsOn;
-		//totalEmissTemp.text = _modal.TotalEmission.ToString();
-		if (nearSwitch && Input.GetKeyUp (KeyCode.Space)) 
+		if(totalEmissTemp != null)
+			totalEmissTemp.text = _modal.TotalEmission.ToString();
+		if (nearSwitch && Input.GetButtonUp ("Toggle")) 
 		{
 			_view.ToggleLight ();
 		}
@@ -31,6 +32,7 @@ public class EmissionController : MonoBehaviour {
 		if (player.CompareTag ("Player")) 
 		{
 			nearSwitch = true;
+			
 			_view.TextState (true);
 		}
 	}

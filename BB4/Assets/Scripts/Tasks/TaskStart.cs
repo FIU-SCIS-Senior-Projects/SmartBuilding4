@@ -1,11 +1,19 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
+using System.Linq;
+using UnityEngine.UI;
 
 public class TaskStart : MonoBehaviour {
 
+	SimulationManager sm;
+
+	Text messageBox;
+	Text taskList;
+
+
 	void Awake() {
-
-
+		sm = SimulationManager.sharedSimManager;
 
 	}
 
@@ -13,6 +21,10 @@ public class TaskStart : MonoBehaviour {
 	void Start () {
 
 		SimulationManager.sharedSimManager.TimeTracker.onOneSecondPassed += OneSecond;
+
+		messageBox = GameObject.Find("TaskMessage").GetComponent<Text>();
+		taskList = GameObject.Find("TaskList").GetComponent<Text>();
+
 
 	}
 
@@ -31,10 +43,9 @@ public class TaskStart : MonoBehaviour {
 
 				if (t.StartTime == realTime) {
 					t.State = Task.CompleteState.inProgress;
-					Debug.Log("Task Has Started");
+					//Debug.Log("Task Has Started");
+					ChangeText("Task: "+t.TaskName+"\n"+"<size='18'>"+t.Description+"</size>");
 
-					//tell simulation manager there is task happening.
-					SimulationManager.sharedSimManager.CurrentTask = t;
 
 				}
 
@@ -49,13 +60,72 @@ public class TaskStart : MonoBehaviour {
 					//fail
 					t.State = Task.CompleteState.failed;
 
-					Debug.Log("TASK FAILED!!!");
+					ChangeText("Task Failed"+t.TaskName);
+					//Debug.Log("TASK FAILED!!!");
 				}
 
+			}
+
+
+			else if (t.State == Task.CompleteState.completed) {
+
+				ChangeText("Task Completed"+t.TaskName);
+
+				t.State = Task.CompleteState.completedCompleted;
 			}
 
 		}
 
 	}
+
+
+
+
+
+
+	IEnumerator FadeInOut()
+	{
+		Color c = messageBox.color;
+		float displayTime = 2f;
+
+		while(c.a < 1)
+		{
+			c.a += Time.deltaTime;
+			messageBox.color = c;
+			yield return null;
+		}
+
+		yield return new WaitForSeconds(displayTime);
+
+		while(c.a > 0 )
+		{
+			c.a -= Time.deltaTime;
+			messageBox.color = c;
+			yield return null;
+		}
+	}
+
+	public void ChangeText(string name)
+	{
+		messageBox.supportRichText = true;
+		messageBox.text = name;
+		StopCoroutine("FadeInOut");
+		StartCoroutine(FadeInOut());
+
+		taskList.text = "";
+		List<Task> tl = sm.getListOfTasks(Task.CompleteState.inProgress);
+		Debug.Log("TASK LIST IS " + tl.Count);
+		foreach(Task t in tl) {
+			taskList.text += "<b>"+t.TaskName + "</b>\n";
+			taskList.text += t.Description + "\n\n";
+
+		}
+
+	}
+
+
+
+
+
 
 }

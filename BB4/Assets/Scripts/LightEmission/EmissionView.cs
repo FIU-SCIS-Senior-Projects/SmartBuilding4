@@ -2,7 +2,7 @@
 using UnityEngine.UI;
 using System.Collections;
 
-public class EmissionView : MonoBehaviour
+public class EmissionView : SimObject
 {
 	[SerializeField]Light[] spotLight;
 	[SerializeField]Text button;
@@ -20,7 +20,8 @@ public class EmissionView : MonoBehaviour
 	}
 
 	public void TextState(bool state){
-		
+
+		_buttonText.text = (_isOn) ? "TURN OFF" :  "TURN ON";
 		_buttonText.gameObject.SetActive (state);
 	}
 
@@ -29,13 +30,21 @@ public class EmissionView : MonoBehaviour
 		_isOn = !_isOn;
 		_buttonText.text = (_isOn) ? "TURN OFF" :  "TURN ON";
 		foreach(Light l in spotLight)
-//<<<<<<< HEAD
+
 			if (l != null)
 				l.enabled = _isOn;
-//=======
-//			l.enabled = _isOn;
-		
-//>>>>>>> Sprint6_2_E
+
+
+		/*
+		 * Checking task completion for turning on and off lights.
+		 * 
+		 */
+		if (_isOn)
+			checkTaskTurnOn();
+
+		else
+			checkTaskTurnOff();
+
 	}
 		
 	public bool LightIsOn

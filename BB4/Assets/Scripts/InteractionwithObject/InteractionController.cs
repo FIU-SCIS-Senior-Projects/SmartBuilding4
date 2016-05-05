@@ -1,15 +1,29 @@
 ﻿using UnityEngine;
 using System.Collections;
 
+
+
 public class InteractionController : MonoBehaviour {
 
 	bool nearObject = false;
-	bool carrying = false;
+	public bool carrying = false;
 	Camera mainCam;
 	[SerializeField]InteractionView view;
 	InteractionObject selectedObject;
 	Rigidbody carryingObject;
+	Rigidbody nearObjectObject;
 	[SerializeField]float distance;
+
+	Quaternion carryingObjectRotation;
+	SimObject so;
+
+	void Awake() {
+
+		so = GetComponent<SimObject>();
+
+	}
+
+
 	void Start()
 	{
 		mainCam = GetComponent<Camera>();
@@ -29,6 +43,13 @@ public class InteractionController : MonoBehaviour {
 		get{ return nearObject;}
 		set{nearObject = value;}
 	}
+
+
+	public Rigidbody NearObjectObject {
+		get { return nearObjectObject; }
+		set {nearObjectObject = value; }
+	}
+
 
 	public InteractionObject Selected
 	{
@@ -52,22 +73,41 @@ public class InteractionController : MonoBehaviour {
 
 	void PickUp()
 	{
-		if(Input.GetKeyDown(KeyCode.P))//Input.GetKey("PickUp"))
+		if(Input.GetButtonUp("PickUp"))
 		{
 			float x = Screen.width /2; 
 			float y = Screen.height/2;
 
+			
 			Ray ray = mainCam.ScreenPointToRay(new Vector3(x,y));
 			RaycastHit hit;
 
 			if(Physics.Raycast(ray, out hit))
 			{
 				selectedObject = hit.collider.GetComponent<InteractionObject>();
+
 				if(selectedObject != null)
 				{
+					if (selectedObject.canPickUp) {
+						carrying = true;
+						carryingObject = selectedObject.RBody;
+					}
+
+					if (selectedObject.canToggle) {
+						selectedObject.UIctrl.pressOnOff ();
+					}
+				}
+			}
+
+			if (nearObjectObject != null) {
+
+				selectedObject = nearObjectObject.GetComponent<InteractionObject>();
+				if (selectedObject != null) {
 					carrying = true;
 					carryingObject = selectedObject.RBody;
+					carryingObjectRotation = selectedObject.transform.rotation;
 				}
+
 			}
 
 		}
@@ -76,10 +116,14 @@ public class InteractionController : MonoBehaviour {
 	void Carry(Rigidbody x)
 	{
 		x.isKinematic = true;
-		x.transform.position = Vector3.Lerp(x.transform.position, transform.position + transform.forward * distance, Time.time);
+		//x.transform.position = Vector3.Lerp(x.transform.position, transform.position + transform.forward * distance, Time.time);
+		x.transform.position = transform.position + (transform.forward * distance);
+		x.transform.rotation = Quaternion.Euler(carryingObjectRotation.eulerAngles.x, transform.rotation.eulerAngles.y - carryingObjectRotation.eulerAngles.y, carryingObjectRotation.eulerAngles.z);
 		if(Input.GetKeyDown(KeyCode.P))
 		{
-			drop(x);
+			//added to make sure they can drop the object here.
+			if (isAtDropZone())
+				drop(x);
 		}
 	}
 
@@ -89,11 +133,8 @@ public class InteractionController : MonoBehaviour {
 
 	//JUSTIN's METHODS
 
-
 	bool isAtDropZone() {
-
-
-
+		return true;
 	}
 
 
@@ -105,6 +146,8 @@ public class InteractionController : MonoBehaviour {
 		selectedObject = null;
 
 
+		//successful drop
+		//so.checkTaskCompletion();
 
 	}
 
