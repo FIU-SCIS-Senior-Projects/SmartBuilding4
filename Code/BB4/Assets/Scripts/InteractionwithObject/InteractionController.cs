@@ -93,7 +93,7 @@ public class InteractionController : MonoBehaviour {
 	bool isAtDropZone() {
 
 
-
+		return true;
 	}
 
 

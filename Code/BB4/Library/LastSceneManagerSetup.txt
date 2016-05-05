@@ -1,8 +1,4 @@
 sceneSetups:
-<<<<<<< HEAD
-- path: Assets/Scenes/MainMenu.unity
-=======
-- path: Assets/Scenes/Interaction With Object/InteractionTest.unity
->>>>>>> Sprint6_2_E
+- path: Assets/Scenes/Main.unity
   isLoaded: 1
   isActive: 1
